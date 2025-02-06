@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     public int currentLevel = 1; // Level yang sedang dimainkan
-    private const int totalLevel = 4; // Total level yang tersedia
+    private const int totalLevel = 8; // Total level yang tersedia
     private const float unlockThreshold = 100f; // Persentase untuk membuka level
 
     void Start()
@@ -74,4 +75,16 @@ public class LevelManager : MonoBehaviour
         AddProgress(30f);
     }
 
+    public void LoadLevel(int level)
+    {
+        string levelName = "Lv1" + level; // Sesuaikan dengan nama scene di folder "Scenes"
+        if (PlayerPrefs.GetInt($"Level{level}Unlocked", 0) == 1) 
+        {
+            SceneManager.LoadScene(levelName);
+        }
+        else
+        {
+            Debug.Log("Level terkunci!");
+        }
+    }
 }
