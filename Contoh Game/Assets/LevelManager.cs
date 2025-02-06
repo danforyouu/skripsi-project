@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -74,4 +75,16 @@ public class LevelManager : MonoBehaviour
         AddProgress(30f);
     }
 
+    public void LoadLevel(int level)
+    {
+        string levelName = "Lv1" + level; // Sesuaikan dengan nama scene di folder "Scenes"
+        if (PlayerPrefs.GetInt($"Level{level}Unlocked", 0) == 1) 
+        {
+            SceneManager.LoadScene(levelName);
+        }
+        else
+        {
+            Debug.Log("Level terkunci!");
+        }
+    }
 }
