@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int currentLevel = 1; // Level yang sedang dimainkan
-    private const int totalLevel = 4; // Total level yang tersedia
+    private const int totalLevel = 8; // Total level yang tersedia
     private const float unlockThreshold = 100f; // Persentase untuk membuka level
 
     void Start()
