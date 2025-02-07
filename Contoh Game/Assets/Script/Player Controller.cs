@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public readonly string moveAnimParameter = "Move";
     public bool isDead;
-    public GameObject playerBody, playerRagdoll;
+    public GameObject playerTpose, playerRagdoll;
 
     public Transform ragdollHips;
     public CameraFollow cameraFollow;
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         isDead = true;
         bloodEffect.Play();
         cameraFollow.playerTarget = ragdollHips;
-        playerBody.SetActive(false);
+        playerTpose.SetActive(false);
         playerRagdoll.SetActive(true);
         print("Player Mati");
         StartCoroutine(RestartGameCoroutine());
