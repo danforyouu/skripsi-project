@@ -13,13 +13,8 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed;
     public Animator animator;
     public readonly string moveAnimParameter = "Move";
-    public bool isDead;
-    public GameObject playerTpose, playerRagdoll;
-
-    public Transform ragdollHips;
+    public GameObject playerTpose;
     public CameraFollow cameraFollow;
-    public ParticleSystem bloodEffect;
-
     private AudioSource audioSource;
 
     public bool hasWon;
@@ -36,7 +31,6 @@ public class PlayerController : MonoBehaviour
     }
     void Movement()
     {
-        if (isDead) return;
         
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
@@ -50,17 +44,6 @@ public class PlayerController : MonoBehaviour
         if (moveX == 0 &&  moveZ == 0) return;
         float heading = Mathf.Atan2(moveX, moveZ);
         transform.rotation = Quaternion.Euler(0, heading * Mathf.Rad2Deg, 0);
-    }
-
-    public void Dead ()
-    {
-        isDead = true;
-        bloodEffect.Play();
-        cameraFollow.playerTarget = ragdollHips;
-        playerTpose.SetActive(false);
-        playerRagdoll.SetActive(true);
-        print("Player Mati");
-        StartCoroutine(RestartGameCoroutine());
     }
 
     IEnumerator RestartGameCoroutine()

@@ -12433,14 +12433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a55606526e676241a7f97b1a8886dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
-  animator: {fileID: 0}
-  isDead: 0
+  movementSpeed: 3
+  animator: {fileID: 268164266}
   playerTpose: {fileID: 268164265}
-  playerRagdoll: {fileID: 0}
-  ragdollHips: {fileID: 0}
   cameraFollow: {fileID: 126017419}
-  bloodEffect: {fileID: 0}
   hasWon: 0
   youWinText: {fileID: 1972523269}
 --- !u!54 &2051545291
