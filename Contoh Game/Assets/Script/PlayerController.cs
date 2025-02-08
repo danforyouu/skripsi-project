@@ -10,10 +10,6 @@ public class PlayerController : MonoBehaviour
     public readonly string moveAnimParameter = "MoveSpeed";
     public GameObject playerTpose;
 
-    public float speed = 0f;
-    public float walk = 2f;
-    public float run  = 5f;
-
     private AudioSource audioSource;
 
     Joystick joystick;
@@ -48,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
         float moveAnim = new Vector2(moveX, moveZ).magnitude;
         animator.SetFloat(moveAnimParameter, moveAnim);
+
         
         if (moveX == 0 &&  moveZ == 0) return;
         float heading = Mathf.Atan2(moveX, moveZ);
