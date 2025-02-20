@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class TouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    internal readonly object TouchDist;
     [HideInInspector]
     public Vector2 touchDist;
 

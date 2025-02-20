@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource audioSource;
 
-    Joystick joystick;
+    public FixedJoystick joystick;
 
     public bool hasWon;
     public GameObject youWinText;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        joystick = FindAnyObjectByType<Joystick>();
+        joystick = FindAnyObjectByType<FixedJoystick>();
     }
 
     void Update()
